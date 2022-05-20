@@ -1,8 +1,17 @@
-import '../styles/globals.css'
-import '@/styles/tailwind.css'
-
+import Layout from "@/components/Layout";
+import { store } from "@/redux/store";
+import { Provider } from "react-redux";
+import "@/styles/boxicons-2.0.7/css/boxicons.min.css";
+import "@/sass/index.scss";
+// import "@/sass/tailwind.scss";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+   return (
+      <Provider store={store}>
+         <Layout>
+            <Component {...pageProps} />
+         </Layout>
+      </Provider>
+   );
 }
 
-export default MyApp
+export default MyApp;

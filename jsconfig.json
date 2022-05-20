@@ -1,17 +1,20 @@
 {
-    "compilerOptions": {
-       "baseUrl": ".",
-       "paths": {
-          "@/components/*": ["src/components/*"],
-          "@/hook/*": ["src/hook/*"],
-          "@/styles/*": ["src/styles/*"],
-          "@/reducers/*": ["src/reducers/*"],
-          "@/models/*": ["server/models/*"],
-          "@/middleware/*": ["server/middleware/*"],
-          "@/controllers/*": ["server/controllers/*"],
-          "@/data/*": ["server/data/*"],
-          "@/lib/*": ["lib/*"],
-          "@/utils/*": ["utils/*"]
-       }
-    }
- }
+   "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+         "@/components/*": ["src/components/*"],
+         "@/hook/*": ["src/hook/*"],
+         "@/styles/*": ["src/styles/*"],
+         "@/sass/*": ["src/sass/*"],
+         "@/reducers/*": ["src/reducers/*"],
+         "@/redux/*": ["src/redux/*"],
+         "@/models/*": ["server/models/*"],
+         "@/middleware/*": ["server/middleware/*"],
+         "@/controllers/*": ["server/controllers/*"],
+         "@/data/*": ["server/data/*"],
+         "@/lib/*": ["lib/*"],
+         "@/mock/*": ["mock/*"],
+         "@/utils/*": ["utils/*"]
+      }
+   }
+}
