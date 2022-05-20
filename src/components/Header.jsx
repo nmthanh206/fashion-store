@@ -27,7 +27,7 @@ const Header = () => {
    const headerRef = useRef(null);
 
    useEffect(() => {
-      window.addEventListener("scroll", () => {
+      const handlerScroll = () => {
          if (
             document.body.scrollTop > 80 ||
             document.documentElement.scrollTop > 80
@@ -36,9 +36,10 @@ const Header = () => {
          } else {
             headerRef.current.classList.remove("shrink");
          }
-      });
+      };
+      window.addEventListener("scroll", handlerScroll);
       return () => {
-         window.removeEventListener("scroll");
+         window.removeEventListener("scroll", handlerScroll);
       };
    }, []);
 
@@ -76,7 +77,9 @@ const Header = () => {
                         }`}
                         onClick={menuToggle}
                      >
-                        {/* <span className=' text-red-400'>asdasdas</span> */}
+                        {/* <span className="block mt-[100px] bg-[#3a7abb]">
+                           asdasdas
+                        </span> */}
                         <Link href={item.path}>
                            <span>{item.display}</span>
                         </Link>
