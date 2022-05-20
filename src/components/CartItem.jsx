@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
-import { updateItem, removeItem } from "@/redux/shopping-cart/cartItemsSlide";
 import numberWithCommas from "@/utils/numberWithCommas";
+import { useActions } from "@/redux/useActions";
 
 const CartItem = (props) => {
-   const dispatch = useDispatch();
+   const actions = useActions();
 
    const itemRef = useRef(null);
 
@@ -20,25 +19,18 @@ const CartItem = (props) => {
 
    const updateQuantity = (opt) => {
       if (opt === "+") {
-         dispatch(updateItem({ ...item, quantity: quantity + 1 }));
+         actions.updateItem({ ...item, quantity: quantity + 1 });
       }
       if (opt === "-") {
-         dispatch(
-            updateItem({
-               ...item,
-               quantity: quantity - 1 === 0 ? 1 : quantity - 1,
-            })
-         );
+         actions.updateItem({
+            ...item,
+            quantity: quantity - 1 === 0 ? 1 : quantity - 1,
+         });
       }
    };
 
-   // const updateCartItem = () => {
-   //     dispatch(updateItem({...item, quantity: quantity}))
-   // }
-
    const removeCartItem = () => {
-      console.log("removeCartItem");
-      dispatch(removeItem(item));
+      actions.removeItem(item);
    };
 
    return (
