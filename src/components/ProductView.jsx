@@ -73,6 +73,7 @@ const ProductView = (props) => {
             price: product.price,
             quantity: quantity,
          };
+         actions.addItem(newItem);
          if (actions.addItem(newItem)) {
             alert("Success");
          } else {
@@ -140,7 +141,12 @@ const ProductView = (props) => {
                   </Button>
                </div> */}
             </div>
-            <div className="product-description__toggle">
+            <div
+               className="product-description__toggle"
+               style={{
+                  marginTop: 12,
+               }}
+            >
                <Button
                   size="sm"
                   onClick={() => setDescriptionExpand(!descriptionExpand)}

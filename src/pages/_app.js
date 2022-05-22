@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import "@/styles/boxicons-2.0.7/css/boxicons.min.css";
 import "@/sass/index.scss";
 import "@/styles/tailwind.css";
+import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
    return (
