@@ -1,16 +1,18 @@
-html,
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+   display: inline;
+   vertical-align: baseline;
+   /* overridge  tailwind icon default */
+}
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+   font-family: "Roboto", sans-serif;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+i {
+   display: block !important;
 }

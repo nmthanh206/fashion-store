@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 const mainNav = [
    {
       display: "Trang chủ",
@@ -22,6 +23,7 @@ const mainNav = [
 
 const Header = () => {
    const { pathname } = useRouter();
+   const cartItems = useSelector((state) => state.cartItems.value);
    const activeNav = mainNav.findIndex((e) => e.path === pathname);
 
    const headerRef = useRef(null);
@@ -90,7 +92,13 @@ const Header = () => {
                   <div className="header__menu__item header__menu__right__item">
                      <i className="bx bx-search"></i>
                   </div>
-                  <div className="header__menu__item header__menu__right__item">
+                  <div className="relative header__menu__item header__menu__right__item">
+                     {cartItems.length > 0 && (
+                        <span className="inline-flex absolute top-0 right-0 justify-center items-center py-1 px-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full transform translate-x-1/2 -translate-y-1/2">
+                           {cartItems.length}
+                        </span>
+                     )}
+
                      <Link href="/cart">
                         <i className="bx bx-shopping-bag"></i>
                      </Link>
